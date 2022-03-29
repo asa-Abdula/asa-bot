@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- footer -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js">
+  </script>
+
+  <icon rel="icon" src="Img/logo.png  "></icon>
+
+    <title>Bot-Regeln</title>
+    <style>
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'poppins', sans-serif;
+  
+}
+.body {
+padding: 0;
+margin: 0;
+}
+.container {
+position: relative;
+margin-top: 100px;
+}
+nav {
+position: fixed;
+z-index: 10;
+left: 0;
+right: 0;
+top: 0;
+font-family: 'Montserrat', sans-serif;
+padding: 0 5%;
+height: 100px;
+background-color: black;
+}
+nav .logo {
+float: left;
+width: 40%;
+height: 100%;
+display: flex;
+align-items: center;
+font-size: 24px;
+color: #fff;
+}
+nav .links {
+float: right;
+padding: 0;
+margin: 0;
+width: 60%;
+height: 100%;
+display: flex;
+justify-content: space-around;
+align-items: center;
+}
+nav .links li {
+list-style: none;
+}
+nav .links a {
+display: block;
+padding: 1em;
+font-size: 16px;
+font-weight: bold;
+color: #fff;
+text-decoration: none;
+}
+#nav-toggle {
+	position: absolute;
+	top: -100px;
+}
+nav .icon-burger {
+	display: none;
+	position: absolute;
+	right: 5%;
+	top: 50%;
+	transform: translateY(-50%);
+}
+nav .icon-burger .line {
+	width: 30px;
+	height: 5px;
+	background-color: #fff;
+	margin: 5px;
+	border-radius: 3px;
+	transition: all .3s ease-in-out;
+}
+@media screen and (max-width: 768px) {
+	nav .logo {
+		float: none;
+		width: auto;
+		justify-content: center;
+	}
+	nav .links {
+		float: none;
+		position: fixed;
+		z-index: 9;
+		left: 0;
+		right: 0;
+		top: 100px;
+		bottom: 100%;
+		width: auto;
+		height: auto;
+		flex-direction: column;
+		justify-content: space-evenly;
+		background-color: rgba(0,0,0,.8);
+		overflow: hidden;
+		box-sizing: border-box;
+		transition: all .5s ease-in-out;
+	}
+	nav .links a {
+		font-size: 20px;
+	}
+	nav :checked ~ .links {
+		bottom: 0;
+	}
+	nav .icon-burger {
+		display: block;
+	}
+	nav :checked ~ .icon-burger .line:nth-child(1) {
+		transform: translateY(10px) rotate(225deg);
+	}
+	nav :checked ~ .icon-burger .line:nth-child(3) {
+		transform: translateY(-10px) rotate(-225deg);
+	}
+	nav :checked ~ .icon-burger .line:nth-child(2) {
+		opacity: 0;
+	}
+	
+}
+
+
+.footer-basic {
+  padding:40px 0;
+  background-color:#ffffff;
+  color:#4b4c4d;
+}
+
+.footer-basic ul {
+  padding:0;
+  list-style:none;
+  text-align:center;
+  font-size:18px;
+  line-height:1.6;
+  margin-bottom:0;
+}
+
+.footer-basic li {
+  padding:0 10px;
+}
+
+.footer-basic ul a {
+  color:inherit;
+  text-decoration:none;
+  opacity:0.8;
+}
+
+.footer-basic ul a:hover {
+  opacity:1;
+}
+
+.footer-basic .social {
+  text-align:center;
+  padding-bottom:25px;
+}
+
+.footer-basic .social > a {
+  font-size:24px;
+  width:40px;
+  height:40px;
+  line-height:40px;
+  display:inline-block;
+  text-align:center;
+  border-radius:50%;
+  border:1px solid #ccc;
+  margin:0 8px;
+  color:inherit;
+  opacity:0.75;
+}
+
+.footer-basic .social > a:hover {
+  opacity:0.9;
+}
+
+.footer-basic .copyright{
+  margin-top:15px;
+  text-align:center;
+  font-size:13px;
+  color:#aaa;
+  margin-bottom:0;
+}
+.list-inline{
+  position: relative;
+}
+.left {
+  position: relative;
+  right: 16px;
+}
+.txt{
+  position: relative;
+  top: 50px;
+  text-align: center;
+}
+.tx{
+  position: relative;
+  text-align: center;
+}
+.leer{
+  box-sizing: border-box;
+  height: 230px
+}
+.leer1{
+  box-sizing: border-box;
+  height: 50px;
+}
+
+#inline{
+  position: relative;
+  text-align: center;
+}
+#img{
+  width: 150px;
+  height: 150px;
+}
+#id{
+  height: 40px;
+  color: white;
+}
+#id::placeholder{
+  color: black;
+  position: relative;
+  text-align: center;
+  opacity: 1;
+  transition: opacity 1s;
+}
+#id:focus::placeholder{
+  opacity: 0;
+}
+#id:focus{
+  color: black;
+}
+#btn{
+  position: relative;
+  width: 150px;
+  height: 50px;
+  border-radius: 50px;
+  color: black;
+  background-color: red;
+}
+#text {
+	display: inline-block;
+	color: darkcyan;
+	border-right: 2px solid black;
+	font-size: 1.45em;
+}
+    </style>
+         <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+  
+  <nav>
+	<input id="nav-toggle" type="checkbox">
+	<div class="logo">A<strong>s</strong>A</div>
+	
+	<ul class="links">
+		<li><a href="main.html">HOME</a></li>
+		<li><a href="project.html">PROJECT</a></li>
+		<li><a href="our.html">ABOUT-US</a></li>
+		<li><a href="imp.html">IMPRESSUM</a></li>
+	</ul>
+	<label for="nav-toggle" class="icon-burger">
+		<div class="line"></div>
+		<div class="line"></div>
+		<div class="line"></div>
+	</label>
+</nav>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<div class="leer1">
+  
+</div>
+<div id="inline">
+  <div class="name">
+    <h2 id="text"></h2>
+  </div>
+  <div id="bild">
+    <img id="img" src="Img/logo.png"alt="" />
+  </div>
+  <br />
+  <br />
+  <div class="">
+  <p>1. Der A<strong>s</strong>A BOT 
+  <br />
+  benötigt die GUILD-ID</p>
+  <input onclick="regeln()" type="checkbox" id="check"/> Regeln akzeptieren | <a id="r" href="">Regeln</a>
+  </div>
+  <br />
+  <div class="id">
+    <input type="text" id="id" placeholder="GUILD ID"/>
+    <br />
+    <br />
+    <button onclick="rbtn()" id="btn" disabled type="submit">senden</button>
+</div>
+</div>
+<div hidden id="inline2">
+  
+</div>
+<div class="leer">
+  
+</div>
+<div class="footer-basic">
+    <footer>
+      <div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-youtube"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div>
+      <ul class="list-inline">
+        <!-- hier footer text -->
+        <p class="tx">
+          © Copyright AsA-Web
+          <br />
+          <br />
+          Modified & Designed by Abdula
+          <br />
+          © Copyright <a href="#">AsA-Web</a>
+        </p>
+    </div>
+      </ul>
+    </footer>
+  </div>
+  
+<script type="text/javascript" charset="utf-8">
+
+
+window.onload= main();
+function main(){
+  var inline = document.getElementById("inline");
+  var inline2 = document.getElementById("inline2");
+  var inl = localStorage.getItem("inline");
+  
+  if(inl === "yes"){
+    inline.setAttribute("hidden", "yes")
+    inline2.removeAttribute("hidden")
+  }
+  else{
+  }
+}
+
+function regeln(){
+  var box = document.getElementById("check");
+  var btn = document.getElementById("btn");
+  if(box.checked) {
+    btn.removeAttribute("disabled");
+    btn.style.backgroundColor = "darkcyan";
+    btn.style.Color = "black";
+    btn.style.borderRadius = "50px";
+  }
+  else {
+    btn.disabled = "true";
+    btn.style.backgroundColor = "red";
+    btn.style.Color = "black";
+    btn.style.borderRadius = "50px";
+  }
+}
+
+var rbtn = document.getElementById("btn")
+rbtn.onclick = function(){ 
+  var inline = document.getElementById("inline")
+  inline.setAttribute("hidden", "true")
+  localStorage.setItem("inline", "yes")
+  console.log("log in")
+}
+
+
+
+// Window reload
+$(window).scroll(function() {
+
+    if ($(this).scrollTop() < -65){
+      location.reload();
+    }
+});
+
+
+
+
+// List of sentences
+var _CONTENT = [
+"Willkommen",
+"Es werden Spezielle Daten gespeichert",
+"Diese Website wurde von AsA erstellt",
+"",
+"",
+""
+];
+
+// Current sentence being processed
+var _PART = 0;
+
+// Character number of the current sentence being processed 
+var _PART_INDEX = 0;
+
+// Holds the handle returned from setInterval
+var _INTERVAL_VAL;
+
+// Element that holds the text
+var _ELEMENT = document.querySelector("#text");
+
+// Implements typing effect
+function Type() { 
+	var text =  _CONTENT[_PART].substring(0, _PART_INDEX + 1);
+	_ELEMENT.innerHTML = text;
+	_PART_INDEX++;
+
+	// If full sentence has been displayed then start to delete the sentence after some time
+	if(text === _CONTENT[_PART]) {
+		clearInterval(_INTERVAL_VAL);
+		setTimeout(function() {
+			_INTERVAL_VAL = setInterval(Delete, 85);
+		}, 1000);
+	}
+}
+
+// Implements deleting effect
+function Delete() {
+	var text =  _CONTENT[_PART].substring(0, _PART_INDEX - 1);
+	_ELEMENT.innerHTML = text;
+	_PART_INDEX--;
+
+	// If sentence has been deleted then start to display the next sentence
+	if(text === '') {
+		clearInterval(_INTERVAL_VAL);
+
+		// If last sentence then display the first one, else move to the next
+		if(_PART == (_CONTENT.length - 1))
+			_PART = 0;
+		else
+			_PART++;
+		_PART_INDEX = 0;
+
+		// Start to display the next sentence after some time
+		setTimeout(function() {
+			_INTERVAL_VAL = setInterval(Type, 100);
+		}, 200);
+	}
+}
+
+// Start the typing effect on load
+_INTERVAL_VAL = setInterval(Type, 100);
+
+
+
+
+
+
+
+// input leer?
+
+</script>
+</body>
+</html>
